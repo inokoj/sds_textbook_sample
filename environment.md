@@ -6,14 +6,14 @@
 
 #### APIの有効化
 
-1. Google Cloud Platformのウェブサイト（https://console.cloud.google.com）へアクセス
+1. Google Cloud Platformのウェブサイト（ https://console.cloud.google.com ）へアクセス
 1. 左上のメニューから「APIとサービス」→「ライブラリ」を選択
 1. 検索欄に「speech」と入力し、「Cloud Speech-to-Text API」を開き、「有効化」を選択
 1. 同様の方法で、「Cloud Text-to-Speech API」（音声合成）も有効化しておく
 
 #### 認証キーの発行
 
-5. Google Cloud Platformのウェブサイト（https://console.cloud.google.com）へアクセス
+5. Google Cloud Platformのウェブサイト（ https://console.cloud.google.com ）へアクセス
 1. 左上のメニューから「APIとサービス」→「認証情報」を選択
 1. 上部の「認証情報を作成」→「サービスアカウント」を選択し、以下のように入力
 	1. 「サービスアカウント名」→（任意）
