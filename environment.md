@@ -83,3 +83,7 @@ Anaconda環境、python 3.8を想定しています。
 ### bi-lstm-crf
 オリジナル（ https://github.com/jidasheng/bi-lstm-crf ）に対して修正を加えたもの  
 `> pip install git+https://github.com/inokoj/bi-lstm-crf.git`
+
+### more-itertools
+`> conda install -c anaconda more-itertools`  
+`(> pip install more-itertools)`
