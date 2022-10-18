@@ -28,7 +28,7 @@
 
 Anaconda環境、python 3.8を想定しています。
 
-#### MeCabバインディング
+#### MeCabバインディング (本書 70頁)
 `> conda install -c mzh mecab-python3`  
 `(> pip install mecab)`
 
