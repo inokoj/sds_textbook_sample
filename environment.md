@@ -37,8 +37,7 @@ Anaconda環境、python 3.8を想定しています。
 `(pip install pyaudio)`
 
 ### google-cloud-speech
-`> conda install -c conda-forge google-cloud-speech`  
-`(> pip install google-cloud-speech)`
+`> pip install google-cloud-speech`
 
 ### google-cloud-texttospeech
 `> pip install --upgrade google-cloud-texttospeech`
