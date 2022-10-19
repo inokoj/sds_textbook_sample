@@ -18,7 +18,7 @@ from six.moves import queue
 
 #
 # 音声入力を行うためのクラス
-# 音声区間を検出し、発話が終了すると音声入力も終了する
+# 発話区間を検出し、発話が終了すると音声入力も終了する
 #
 class MicrophoneStream(object):
 	
@@ -50,7 +50,7 @@ class MicrophoneStream(object):
 		self.closed = False
 	
 	# 音声入力の度に呼び出される関数
-	# 同時に音声パワーに基づいて音声区間を判定
+	# 同時に音声パワーに基づいて発話区間を判定
 	# 引数は pyaudio の仕様に合わせたもの
 	def callback(self, in_data, frame_count, time_info, status_flags):
 		

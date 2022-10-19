@@ -19,7 +19,7 @@ from six.moves import queue
 
 #
 # 音声入力を行うためのクラス
-# 音声区間を検出し、発話が終了すると音声入力も終了する
+# 発話区間を検出し、発話が終了すると音声入力も終了する
 #
 class MicrophoneStream(object):
 	
@@ -34,13 +34,13 @@ class MicrophoneStream(object):
 		# 入力された音声データを保持するデータキュー
 		self.buff = queue.Queue()
 
-		# 音声区間検出のパラメータ
-		self.TH_VAD = 45				# [ dB] 音声区間検出のパワーのしきい値（入力環境によって要調整）
-		self.TH_VAD_LENGTH_START = 0.3	# [sec] しきい値以上の区間がこの長さ以上続いたら音声区間の開始を認定する
-		self.TH_VAD_LENGTH_END = 1.0	# [sec] しきい値以下の区間がこの長さ以上続いたら音声区間の終了を認定する
+		# 発話区間検出のパラメータ
+		self.TH_VAD = 45				# [ dB] 発話区間検出のパワーのしきい値（入力環境によって要調整）
+		self.TH_VAD_LENGTH_START = 0.3	# [sec] しきい値以上の区間がこの長さ以上続いたら発話区間の開始を認定する
+		self.TH_VAD_LENGTH_END = 1.0	# [sec] しきい値以下の区間がこの長さ以上続いたら発話区間の終了を認定する
 
-		# 音声区間検出のための変数
-		self.is_speaking = False		# 現在音声区間を認定しているか
+		# 発話区間検出のための変数
+		self.is_speaking = False		# 現在発話区間を認定しているか
 		self.count_on = 0				# 現在まででしきい値以上の区間が連続している数
 		self.count_off = 0				# 現在まででしきい値以下の区間が連続している数
 		self.end = False				# 発話が終了したか
@@ -63,7 +63,7 @@ class MicrophoneStream(object):
 		self.closed = False
 	
 	# 音声入力の度に呼び出される関数
-	# 同時に音声パワーに基づいて音声区間を判定
+	# 同時に音声パワーに基づいて発話区間を判定
 	# 引数は pyaudio の仕様に合わせたもの
 	def callback(self, in_data, frame_count, time_info, status_flags):
 		
@@ -79,7 +79,7 @@ class MicrophoneStream(object):
 		self.str_current_power = '音声パワー：%5.1f[dB] ' % power
 		print('\r' + self.str_current_power, end='')
 
-		# 音声パワーがしきい値以上、かつ音声区間をまだ認定していない場合
+		# 音声パワーがしきい値以上、かつ発話区間をまだ認定していない場合
 		if power >= self.TH_VAD and self.is_speaking == False:
 			
 			# しきい値以上の区間のカウンタを増やす
@@ -88,12 +88,12 @@ class MicrophoneStream(object):
 			# しきい値以上の区間の長さを秒単位に変換
 			count_on_sec = float(self.count_on * self.chunk) / self.rate
 							 
-			# 音声区間の開始を認定するしきい値と比較
+			# 発話区間の開始を認定するしきい値と比較
 			if count_on_sec >= self.TH_VAD_LENGTH_START:
 				self.is_speaking = True
 				self.count_on = 0
 		
-		# 音声区間を認定したあとに、音声パワーがしきい値の場合
+		# 発話区間を認定したあとに、音声パワーがしきい値の場合
 		if power < self.TH_VAD and self.is_speaking:
 			
 			# しきい値以下の区間のカウンタを増やす
@@ -102,7 +102,7 @@ class MicrophoneStream(object):
 			# しきい値以下の区間の長さを秒単位に変換
 			count_off_sec = float(self.count_off * self.chunk) / self.rate
 			
-			# 音声区間の終了を認定するしきい値と比較
+			# 発話区間の終了を認定するしきい値と比較
 			if count_off_sec >= self.TH_VAD_LENGTH_END:
 				self.end = True
 				self.count_off = False

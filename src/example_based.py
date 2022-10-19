@@ -1,6 +1,5 @@
 from __future__ import division
 
-import sys, os
 import numpy as np
 import MeCab
 from gensim.models import KeyedVectors
@@ -86,8 +85,12 @@ class ExampleBased(object):
 			if d.strip() == 'EOS':
 				break
 			
-			word = d.split('\t')[0]
-			pos = d.split('\t')[1].split(',')[0]
+			if len(d.split('\t')) == 2:
+				word = d.split('\t')[0]
+				pos = d.split('\t')[1].split(',')[0]
+			else:
+				word = d.split('\t')[0]
+				pos = d.split('\t')[4].split('-')[0]
 			
 			if pos in ['名詞', '形容詞', '動詞', '感動詞']:
 				u.append(word)

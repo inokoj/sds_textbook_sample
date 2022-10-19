@@ -1,6 +1,5 @@
 from __future__ import division
 
-import sys, os
 import re
 import numpy as np
 import pickle

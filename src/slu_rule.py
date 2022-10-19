@@ -1,7 +1,6 @@
 from __future__ import division
 
 import re
-import sys, os
 
 #
 # ルールベースの言語理解を行うクラス

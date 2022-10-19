@@ -1,1 +1,3 @@
 *.model
+src/.ipynb_checkpoints/example_based-checkpoint.ipynb
+src/data/entity_vector.model.bin
