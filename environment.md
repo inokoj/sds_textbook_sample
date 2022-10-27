@@ -1,8 +1,11 @@
 # 最新の環境構築方法（2022年10月18日 更新）
 
-このファイルではサンプルプログラムの実行環境について最新の情報をまとめています。
+このファイルではサンプルプログラム（Hands-on）の実行環境について最新の情報をまとめています。  
+なお、Anaconda環境、python 3.8を想定しています。
 
-## Google Cloud Platformの登録（本書 44~45頁）
+## 3章 (クラウド型音声認識の利用)
+
+### Google Cloud Platformの登録
 
 #### APIの有効化
 
@@ -24,42 +27,101 @@
 1. 上部の「キー」を選択し、「鍵を追加」→「新しい鍵を作成」を選択
 1. キーのタイプを「JSON」とし「作成」を選択すると認証キーファイル（JSON形式）のダウンロードが開始されるので保存する。例えば、このあとに実装するプログラムと同じフィルダに置くとよい。このファイルを公開したり他人に渡したりしないこと。
 
-## Pythonパッケージのインストール
+### Pythonパッケージのインストール
 
-Anaconda環境、python 3.8を想定しています。
+#### pyAudio
+```
+conda install -c anaconda pyaudio
+```  
+または
+```
+pip install pyaudio
+```
 
-#### MeCabバインディング (本書 70頁)
-`> conda install -c mzh mecab-python3`  
-`(> pip install mecab)`
+#### google-cloud-speech
+~~`> conda install -c conda-forge google-cloud-speech`~~
+``` 
+pip install google-cloud-speech
+``` 
 
-### pyAudio
-`> conda install -c anaconda pyaudio`  
-`(pip install pyaudio)`
 
-### google-cloud-speech
-`> pip install google-cloud-speech`
+## 4章 (言語理解の実装)
+
+### Pythonパッケージのインストール
+
+#### scikit-learn
+```
+conda install -c intel scikit-learn
+```  
+または
+```
+pip install scikit-learn
+```
+
+#### sklearn-crfsuite
+```
+conda install -c conda-forge sklearn-crfsuite
+```  
+または
+```
+pip install sklearn-crfsuite
+```
+
+#### gensim
+```
+conda install -c conda-forge gensim
+```  
+または
+```
+pip install gensim
+```
+
+### MeCabのインストール
+
+#### MeCab本体
+
+64bit Windows版の配布サイト  
+https://github.com/ikegami-yukino/mecab/releases
+
+#### MeCabバインディング
+~~`> conda install -c conda-forge mecab`~~  
+~~`> pip install mecab`~~
+```
+conda install -c mzh mecab-python3
+```
+または
+```
+pip install mecab-python3
+```
+
+## 7章 (クラウド型音声合成の利用)
+
+### Pythonパッケージのインストール
+
 
 ### google-cloud-texttospeech
-`> pip install --upgrade google-cloud-texttospeech`
 
-### scikit-learn
-`> conda install -c intel scikit-learn`  
-`(> pip install scikit-learn)`
+~~`> conda install -c conda-forge google-cloud-texttospeech`~~  
+```
+pip install --upgrade google-cloud-texttospeech
+```
 
-### sklearn-crfsuite
-`> conda install -c conda-forge sklearn-crfsuite`  
-`(> pip install sklearn-crfsuite)`
-
-### gensim
-`> conda install -c conda-forge gensim`  
-`(> pip install gensim)`
 
 ### ffmpeg
-`> conda install -c conda-forge ffmpeg`
+```
+conda install -c conda-forge ffmpeg
+```
 
 ### pydub
-`> conda install -c conda-forge pydub`  
-`(> pip install pydub)`
+```
+conda install -c conda-forge pydub
+```
+または
+```
+pip install pydub
+```
+
+## 今後の追加予定
 
 ※以下は今後のサンプルプログラムの追加で必要となるもの。
 
