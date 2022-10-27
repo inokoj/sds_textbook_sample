@@ -24,11 +24,13 @@ Hands-onとして紹介したソースコードのリンクは以下の通りで
 
 ### 3章（クラウド型音声認識の利用）
 
+- [環境構築](environment.md#3%E7%AB%A0-%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E5%9E%8B%E9%9F%B3%E5%A3%B0%E8%AA%8D%E8%AD%98%E3%81%AE%E5%88%A9%E7%94%A8)
 - [音声認識（ストリーミング型）](src/asr_google_streaming.ipynb)
 - [音声認識（ストリーミング型・発話区間検出有り）](src/asr_google_streaming_vad.ipynb)
 
 ### 4章（言語理解の実装）
 
+- [環境構築](environment.md#4%E7%AB%A0-%E8%A8%80%E8%AA%9E%E7%90%86%E8%A7%A3%E3%81%AE%E5%AE%9F%E8%A3%85)
 - [言語理解（ルールによる方法）](src/slu_rule.ipynb)
 - [言語理解（機械学習による方法：ドメイン推定）](src/slu_ml_domain.ipynb)
 - [言語理解（機械学習による方法：スロット値推定）](src/slu_ml_slot.ipynb)
@@ -44,6 +46,7 @@ Hands-onとして紹介したソースコードのリンクは以下の通りで
 
 ### 7章（クラウド型音声合成の利用）
 
+- [環境構築](environment.md#7%E7%AB%A0-%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E5%9E%8B%E9%9F%B3%E5%A3%B0%E5%90%88%E6%88%90%E3%81%AE%E5%88%A9%E7%94%A8)
 - [音声合成](src/tts_google.ipynb)
 
 ### 8章（システム統合）
