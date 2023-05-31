@@ -59,12 +59,13 @@ pip install scikit-learn
 ```
 
 #### sklearn-crfsuite
-```
-conda install -c conda-forge sklearn-crfsuite
-```  
+
+~~`>conda install -c conda-forge sklearn-crfsuite`~~
+  
 または
+~~`> pip install sklearn-crfsuite`~~
 ```
-pip install sklearn-crfsuite
+pip install "git+https://github.com/MeMartijn/updated-sklearn-crfsuite.git#egg=sklearn_crfsuite"
 ```
 
 #### gensim
